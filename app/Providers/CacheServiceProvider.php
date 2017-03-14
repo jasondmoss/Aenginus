@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Lufficc\Cache\NoCache;
+use App\Aenginus\Cache\NoCache;
 use Illuminate\Support\ServiceProvider;
-use Lufficc\Cache\Cacheable;
+use Aenginus\Cache\Cacheable;
 
 class CacheServiceProvider extends ServiceProvider
 {

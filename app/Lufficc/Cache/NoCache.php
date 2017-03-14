@@ -6,7 +6,7 @@
  * Time: 18:09
  */
 
-namespace App\Lufficc\Cache;
+namespace App\Aenginus\Cache;
 
 
 use App\Contracts\XblogCache;

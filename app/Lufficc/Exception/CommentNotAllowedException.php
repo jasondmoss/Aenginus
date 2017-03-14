@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-namespace Lufficc\Exception;
+namespace Aenginus\Exception;
 
 use Exception;
 

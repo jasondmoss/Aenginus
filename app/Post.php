@@ -6,8 +6,8 @@ use App\Scopes\PublishedScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
-use Lufficc\Comment\CommentHelper;
-use Lufficc\Config\ConfigureHelper;
+use Aenginus\Comment\CommentHelper;
+use Aenginus\Config\ConfigureHelper;
 
 class Post extends Model
 {

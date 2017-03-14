@@ -6,7 +6,7 @@
  * Time: 23:00
  */
 
-namespace Lufficc;
+namespace Aenginus;
 
 use League\HTMLToMarkdown\HtmlConverter;
 use Parsedown;

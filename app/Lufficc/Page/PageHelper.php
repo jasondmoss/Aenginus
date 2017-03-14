@@ -1,5 +1,5 @@
 <?php
-namespace Lufficc\Page;
+namespace Aenginus\Page;
 /**
  * Created by PhpStorm.
  * User: lufficc

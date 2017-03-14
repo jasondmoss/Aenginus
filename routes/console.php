@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-use Lufficc\MarkDownParser;
+use Aenginus\MarkDownParser;
 
 /*
 |--------------------------------------------------------------------------

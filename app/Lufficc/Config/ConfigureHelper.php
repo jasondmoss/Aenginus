@@ -6,11 +6,11 @@
  * Time: 14:51
  */
 
-namespace Lufficc\Config;
+namespace Aenginus\Config;
 
 
 use App\Configuration;
-use Lufficc\Exception\UnConfigurableException;
+use Aenginus\Exception\UnConfigurableException;
 
 trait ConfigureHelper
 {

@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Lufficc\ExceptionHandler\BlogExceptionHandler;
+use Aenginus\ExceptionHandler\BlogExceptionHandler;
 
 class Handler extends ExceptionHandler
 {

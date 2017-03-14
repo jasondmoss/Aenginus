@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Lufficc\Comment\CommentHelper;
-use Lufficc\Config\ConfigureHelper;
+use Aenginus\Comment\CommentHelper;
+use Aenginus\Config\ConfigureHelper;
 
 class Page extends Model
 {

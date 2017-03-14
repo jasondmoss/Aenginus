@@ -13,16 +13,17 @@ require('laravel-elixir-vue');
  |
  */
 var js = [
-    'resources/assets/js/jquery.js',
-    'resources/assets/js/bootstrap.js',
-    'resources/assets/js/hightlight.js',
-    'resources/assets/js/marked.js',
-    'resources/assets/js/autosize.min.js',
-    'resources/assets/js/imgLiquid-min.js',
-    'resources/assets/js/codemirror-4.inline-attachment.js',
-    'resources/assets/js/sweetalert.min.js',
     'resources/assets/js/app.js',
+    'resources/assets/js/autosize.min.js',
+    'resources/assets/js/bootstrap.js',
+    'resources/assets/js/codemirror-4.inline-attachment.js',
+    'resources/assets/js/hightlight.js',
+    'resources/assets/js/imgLiquid-min.js',
+    'resources/assets/js/jquery.js',
+    'resources/assets/js/marked.js',
+    'resources/assets/js/sweetalert.min.js'
 ];
+
 elixir(function (mix) {
     mix
         .sass('app.scss')

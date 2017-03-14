@@ -9,9 +9,9 @@ namespace App\Http\Repositories;
 
 use App\Comment;
 use Illuminate\Http\Request;
-use Lufficc\Exception\CommentNotAllowedException;
-use Lufficc\MarkDownParser;
-use Lufficc\Mention;
+use Aenginus\Exception\CommentNotAllowedException;
+use Aenginus\MarkDownParser;
+use Aenginus\Mention;
 
 /**
  * Class CommentRepository

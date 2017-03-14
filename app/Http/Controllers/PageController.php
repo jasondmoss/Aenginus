@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\CommentRepository;
 use App\Http\Repositories\PageRepository;
 use App\Http\Requests;
-use Lufficc\Page\PageHelper;
+use Aenginus\Page\PageHelper;
 
 class PageController extends Controller
 {

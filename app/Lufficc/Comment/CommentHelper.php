@@ -1,5 +1,5 @@
 <?php
-namespace Lufficc\Comment;
+namespace Aenginus\Comment;
 
 use XblogConfig;
 

@@ -6,7 +6,7 @@
  * Time: 17:10
  */
 
-namespace Lufficc;
+namespace Aenginus;
 
 use Qiniu\Auth;
 use Qiniu\Storage\BucketManager;

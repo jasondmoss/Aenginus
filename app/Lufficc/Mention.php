@@ -6,7 +6,7 @@
  * Time: 1:32
  */
 
-namespace Lufficc;
+namespace Aenginus;
 
 use App\Comment;
 use App\Notifications\MentionedInComment;

@@ -6,11 +6,11 @@
  * Time: 18:02
  */
 
-namespace Lufficc\ExceptionHandler;
+namespace Aenginus\ExceptionHandler;
 
 use Exception;
 use Illuminate\Http\Request;
-use Lufficc\Exception\CommentNotAllowedException;
+use Aenginus\Exception\CommentNotAllowedException;
 
 class BlogExceptionHandler
 {

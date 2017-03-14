@@ -12,7 +12,7 @@ use App\Post;
 use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Lufficc\MarkDownParser;
+use Aenginus\MarkDownParser;
 
 /**
  * design for cache

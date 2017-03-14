@@ -1,5 +1,5 @@
 <?php
-namespace Lufficc\Cache;
+namespace Aenginus\Cache;
 
 /**
  * Created by PhpStorm.

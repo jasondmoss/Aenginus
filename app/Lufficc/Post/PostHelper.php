@@ -1,5 +1,5 @@
 <?php
-namespace Lufficc\Post;
+namespace Aenginus\Post;
 
 use App\Post;
 

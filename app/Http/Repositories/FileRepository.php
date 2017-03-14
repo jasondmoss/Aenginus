@@ -11,7 +11,7 @@ namespace App\Http\Repositories;
 
 use App\File;
 use Illuminate\Http\UploadedFile;
-use Lufficc\FileUploadManager;
+use Aenginus\FileUploadManager;
 
 abstract class FileRepository extends Repository
 {

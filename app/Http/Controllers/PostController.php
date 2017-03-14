@@ -13,7 +13,7 @@ use Carbon\Carbon;
 use Gate;
 use Illuminate\Http\Request;
 use League\HTMLToMarkdown\HtmlConverter;
-use Lufficc\Post\PostHelper;
+use Aenginus\Post\PostHelper;
 use XblogConfig;
 
 class PostController extends Controller
