@@ -1,7 +1,18 @@
 <?php
+
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace Aenginus\Comment;
 
-use XblogConfig;
+use AenginusConfig;
 
 trait CommentHelper
 {
@@ -25,7 +36,7 @@ trait CommentHelper
     public function isShownComment()
     {
         $configuration = $this->getCommentInfo();
-        return $configuration['comment_info'] != 'force_disable' && ($configuration['comment_info'] == 'force_enable' || XblogConfig::getValue('comment_type') != 'none');
+        return $configuration['comment_info'] != 'force_disable' && ($configuration['comment_info'] == 'force_enable' || AenginusConfig::getValue('comment_type') != 'none');
     }
 
     /**
@@ -34,7 +45,7 @@ trait CommentHelper
     public function allowComment()
     {
         $allow_resource_comment = $this->getConfig('allow_resource_comment', 'default');
-        return $allow_resource_comment == 'default' ? XblogConfig::getBoolValue('allow_comment', true) : $this->getBoolConfig('allow_resource_comment', true);
+        return $allow_resource_comment == 'default' ? AenginusConfig::getBoolValue('allow_comment', true) : $this->getBoolConfig('allow_resource_comment', true);
     }
 
     /**
@@ -42,8 +53,10 @@ trait CommentHelper
      */
     public function getCommentType()
     {
-        $comment_type = XblogConfig::getValue('comment_type', 'raw');
+        $comment_type = AenginusConfig::getValue('comment_type', 'raw');
         $commentable_config = $this->getCommentInfo()['comment_type'];
         return ($commentable_config == 'default' ? $comment_type : $commentable_config);
     }
 }
+
+/* <> */

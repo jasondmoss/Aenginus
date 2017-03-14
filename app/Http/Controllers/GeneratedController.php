@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Controllers;
 
-use App\Contracts\XblogCache;
+use App\Contracts\AenginusCache;
 use App\Http\Requests;
 use App\Page;
 use App\Post;
@@ -10,14 +20,15 @@ use App\Post;
 class GeneratedController extends Controller
 {
     const tag = 'generated';
+
     /**
-     * @var XblogCache
+     * @var AenginusCache
      */
-    private $xblogCache;
+    private $aenginusCache;
 
     public function index()
     {
-        $view = $this->getXblogCache()->remember('generated.sitemap', function () {
+        $view = $this->getAenginusCache()->remember('generated.sitemap', function () {
             $posts = Post::select([
                 'slug',
                 'updated_at',
@@ -34,7 +45,7 @@ class GeneratedController extends Controller
 
     public function feed()
     {
-        $view = $this->getXblogCache()->remember('generated.feed', function () {
+        $view = $this->getAenginusCache()->remember('generated.feed', function () {
             $posts = Post::select(Post::selectArrayWithOutContent)->orderBy('created_at', 'desc')->with('category', 'user')->get();
             return view('generated.feed', compact('posts'))->render();
         });
@@ -42,15 +53,17 @@ class GeneratedController extends Controller
     }
 
     /**
-     * @return XblogCache
+     * @return AenginusCache
      */
-    private function getXblogCache()
+    private function getAenginusCache()
     {
-        if ($this->xblogCache == null) {
-            $this->xblogCache = app('XblogCache');
-            $this->xblogCache->setTag(GeneratedController::tag);
-            $this->xblogCache->setTime(60 * 24);
+        if ($this->aenginusCache == null) {
+            $this->aenginusCache = app('AenginusCache');
+            $this->aenginusCache->setTag(GeneratedController::tag);
+            $this->aenginusCache->setTime(60 * 24);
         }
-        return $this->xblogCache;
+        return $this->aenginusCache;
     }
 }
+
+/* <> */

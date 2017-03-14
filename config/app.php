@@ -237,6 +237,6 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
 
-        'XblogConfig' => App\Facades\XblogConfig::class,
+        'AenginusConfig' => App\Facades\AenginusConfig::class,
     ]
 ];

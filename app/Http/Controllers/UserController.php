@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\ImageRepository;
@@ -111,5 +121,6 @@ class UserController extends Controller
         $image = $request->file($fileName);
         return $this->imageRepository->uploadImage($image, $key);
     }
-
 }
+
+/* <> */

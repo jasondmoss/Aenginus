@@ -1,30 +1,41 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Observers;
 
-
-use App\Contracts\XblogCache;
+use App\Contracts\AenginusCache;
 use App\Http\Controllers\GeneratedController;
 use App\Page;
 
 class PageObserver
 {
-    protected $xblogCache;
+    protected $aenginusCache;
 
     public function saved(Page $page)
     {
-        $this->getXblogCache()->clearCache();
+        $this->getAenginusCache()->clearCache();
     }
 
     /**
-     * @return XblogCache
+     * @return AenginusCache
      */
-    private function getXblogCache()
+    private function getAenginusCache()
     {
-        if ($this->xblogCache == null) {
-            $this->xblogCache = app('XblogCache');
-            $this->xblogCache->setTag(GeneratedController::tag);
+        if ($this->aenginusCache == null) {
+            $this->aenginusCache = app('AenginusCache');
+            $this->aenginusCache->setTag(GeneratedController::tag);
         }
-        return $this->xblogCache;
+        return $this->aenginusCache;
     }
 }
+
+/* <> */

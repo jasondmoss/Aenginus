@@ -51,7 +51,7 @@
                 uploadUrl: $("#upload-img-url").data('upload-img-url'),
                 uploadFieldName: 'image',
                 extraParams: {
-                    '_token': XblogConfig.csrfToken,
+                    '_token': AenginusConfig.csrfToken,
                     'type': 'xrt'
                 },
             });

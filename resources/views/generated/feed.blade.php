@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>{{ $site_title or 'Xblog' }}</title>
+        <title>{{ $site_title or 'Aenginus' }}</title>
         <description>{{ $description or 'Description' }}</description>
         <link>{{ url('/') }}</link>
         <atom:link href="{{ url('/feed.xml') }}" rel="self" type="application/rss+xml"/>
@@ -9,7 +9,7 @@
         ?>
         <pubDate>{{ $date }}</pubDate>
         <lastBuildDate>{{ $date }}</lastBuildDate>
-        <generator>lufficc</generator>
+        <generator>jasondmoss</generator>
         @foreach ($posts as $post)
             <item>
                 <title>{{ $post->title }}</title>

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -7,7 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\TagRepository;
 use App\Tag;
 use Illuminate\Http\Request;
-use XblogConfig;
+use AenginusConfig;
 
 class TagController extends Controller
 {
@@ -47,3 +57,5 @@ class TagController extends Controller
         return back()->withErrors($tag->name . '刪除失败');
     }
 }
+
+/* <> */

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Providers;
 
 use App\Aenginus\Cache\NoCache;
@@ -25,7 +35,7 @@ class CacheServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('XblogCache', function ($app) {
+        $this->app->bind('AenginusCache', function ($app) {
             if (config('cache.enable') == 'true') {
                 return new Cacheable();
             } else {
@@ -34,3 +44,5 @@ class CacheServiceProvider extends ServiceProvider
         });
     }
 }
+
+/* <> */

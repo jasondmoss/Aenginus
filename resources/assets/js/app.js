@@ -1,8 +1,8 @@
 /**
- * @author lufficc
+ * @author jasondmoss
  */
 (function ($) {
-    var Xblog = {
+    var Aenginus = {
         init: function () {
             this.bootUp();
         },
@@ -25,7 +25,7 @@
             return "\n" +
                 "<form action='" + $(this).attr('data-url') + "' method='post' style='display:none'>\n" +
                 "   <input type='hidden' name='_method' value='" + ($(this).data('method') ? $(this).data('method') : 'delete') + "'>\n" +
-                "   <input type='hidden' name='_token' value='" + XblogConfig.csrfToken + "'>\n" +
+                "   <input type='hidden' name='_token' value='" + AenginusConfig.csrfToken + "'>\n" +
                 "</form>\n"
         }).click(function () {
             var deleteForm = $(this).find("form");
@@ -56,7 +56,7 @@
                     function () {
                         $.ajax({
                             headers: {
-                                'X-CSRF-TOKEN': XblogConfig.csrfToken
+                                'X-CSRF-TOKEN': AenginusConfig.csrfToken
                             },
                             url: url,
                             type: method,
@@ -169,7 +169,7 @@
                 method: 'post',
                 url: $(this).attr('action'),
                 headers: {
-                    'X-CSRF-TOKEN': XblogConfig.csrfToken
+                    'X-CSRF-TOKEN': AenginusConfig.csrfToken
                 },
                 data: {
                     commentable_id: form.find('input[name=commentable_id]').val(),
@@ -249,7 +249,7 @@
     function initProjects() {
         var projects = $('.projects');
         if (projects.length > 0) {
-            $.get('https://api.github.com/users/' + XblogConfig.github_username + '/repos?type=owner',
+            $.get('https://api.github.com/users/' + AenginusConfig.github_username + '/repos?type=owner',
                 function (repositories) {
                     if (!repositories) {
                         projects.html('<div><h3>加载失败</h3><p>请刷新或稍后再试...</p></div>');
@@ -273,10 +273,10 @@
         }
     }
 
-    window.Xblog = Xblog;
+    window.Aenginus = Aenginus;
 })(jQuery);
 $(document).ready(function () {
-    Xblog.init();
+    Aenginus.init();
 });
 function replySomeone(username) {
     var commentContent = $("#comment-content");

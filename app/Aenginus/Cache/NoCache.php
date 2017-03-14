@@ -1,12 +1,22 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Aenginus\Cache;
 
 
-use App\Contracts\XblogCache;
+use App\Contracts\AenginusCache;
 use Closure;
 
-class NoCache implements XblogCache
+class NoCache implements AenginusCache
 {
     public function setTag($tag)
     {
@@ -43,3 +53,5 @@ class NoCache implements XblogCache
         // Do Nothing
     }
 }
+
+/* <> */

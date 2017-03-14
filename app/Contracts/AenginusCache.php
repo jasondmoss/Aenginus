@@ -10,14 +10,23 @@
  * @link       https://github.com/jasondmoss/aenginus/
  */
 
-namespace App;
+namespace App\Contracts;
 
-use Illuminate\Database\Eloquent\Model;
+use Closure;
 
-class Map extends Model
+interface AenginusCache
 {
-    public $timestamps = false;
-    protected $fillable = ['key','value'];
+    public function setTag($tag);
+
+    public function setTime($time_in_minute);
+
+    public function remember($key, Closure $entity, $tag = null);
+
+    public function forget($key, $tag = null);
+
+    public function clearCache($tag = null);
+
+    public function clearAllCache();
 }
 
 /* <> */

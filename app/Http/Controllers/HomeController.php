@@ -1,11 +1,21 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\PostRepository;
 use App\Post;
 use Illuminate\Http\Request;
-use XblogConfig;
+use AenginusConfig;
 
 class HomeController extends Controller
 {
@@ -31,7 +41,7 @@ class HomeController extends Controller
         $key = trim($request->get('q'));
         if ($key == '')
             return back()->withErrors("请输入关键字");
-        $page_size = XblogConfig::getValue('page_size', 7);
+        $page_size = AenginusConfig::getValue('page_size', 7);
         $key = "%$key%";
         $posts = Post::where('title', 'like', $key)
             ->orWhere('description', 'like', $key)
@@ -54,5 +64,6 @@ class HomeController extends Controller
         $posts_count = $this->postRepository->postCount();
         return view('achieve', compact('posts', 'posts_count'));
     }
-
 }
+
+/* <> */

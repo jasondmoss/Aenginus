@@ -21,3 +21,5 @@ class PublishedScope implements Scope
         return $builder->where('status', 1);
     }
 }
+
+/* <> */

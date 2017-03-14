@@ -1,10 +1,21 @@
 <?php
+
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace Aenginus\Cache;
 
-use App\Contracts\XblogCache;
+use App\Contracts\AenginusCache;
 use Closure;
 
-class Cacheable implements XblogCache
+class Cacheable implements AenginusCache
 {
     public $tag;
 
@@ -41,3 +52,5 @@ class Cacheable implements XblogCache
         $this->cacheTime = $time_in_minute;
     }
 }
+
+/* <> */

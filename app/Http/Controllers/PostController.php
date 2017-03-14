@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\CategoryRepository;
@@ -14,7 +24,7 @@ use Gate;
 use Illuminate\Http\Request;
 use League\HTMLToMarkdown\HtmlConverter;
 use Aenginus\Post\PostHelper;
-use XblogConfig;
+use AenginusConfig;
 
 class PostController extends Controller
 {
@@ -36,7 +46,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $page_size = XblogConfig::getValue('page_size', 7);
+        $page_size = AenginusConfig::getValue('page_size', 7);
         $posts = $this->postRepository->pagedPosts($page_size);
         return view('post.index', compact('posts'));
     }
@@ -50,3 +60,5 @@ class PostController extends Controller
         return view('post.show', compact('post', 'comments', 'recommendedPosts'));
     }
 }
+
+/* <> */

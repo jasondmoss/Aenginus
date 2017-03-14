@@ -1,29 +1,39 @@
 <?php
 
+/**
+ * Ænginus: Laravel Website Engine.
+ *
+ * @package    Laravel
+ * @author     Jason D. Moss <jason@jdmlabs.com>
+ * @copyright  2017 Jason D. Moss. All rights freely given.
+ * @license    https://github.com/jasondmoss/aenginus/blob/master/LICENSE.md [WTFPL License]
+ * @link       https://github.com/jasondmoss/aenginus/
+ */
+
 namespace App\Http\Repositories;
 
-use App\Contracts\XblogCache;
+use App\Contracts\AenginusCache;
 use Closure;
 
 abstract class Repository
 {
     /**
-     * @var XblogCache
+     * @var AenginusCache
      */
-    private $xblogCache;
+    private $aenginusCache;
 
     public abstract function model();
 
     public abstract function tag();
 
-    private function getXblogCache()
+    private function getAenginusCache()
     {
-        if ($this->xblogCache == null) {
-            $this->xblogCache = app('XblogCache');
-            $this->xblogCache->setTag($this->tag());
-            $this->xblogCache->setTime($this->cacheTime());
+        if ($this->aenginusCache == null) {
+            $this->aenginusCache = app('AenginusCache');
+            $this->aenginusCache->setTag($this->tag());
+            $this->aenginusCache->setTime($this->cacheTime());
         }
-        return $this->xblogCache;
+        return $this->aenginusCache;
     }
 
     public function cacheTime()
@@ -49,22 +59,23 @@ abstract class Repository
 
     public function remember($key, Closure $entity, $tag = null)
     {
-        return $this->getXblogCache()->remember($key, $entity, $tag);
+        return $this->getAenginusCache()->remember($key, $entity, $tag);
     }
 
     public function forget($key, $tag = null)
     {
-        $this->getXblogCache()->forget($key, $tag);
+        $this->getAenginusCache()->forget($key, $tag);
     }
 
     public function clearCache($tag = null)
     {
-        $this->getXblogCache()->clearCache($tag);
+        $this->getAenginusCache()->clearCache($tag);
     }
 
     public function clearAllCache()
     {
-        $this->getXblogCache()->clearAllCache();
+        $this->getAenginusCache()->clearAllCache();
     }
-
 }
+
+/* <> */
