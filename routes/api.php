@@ -11,5 +11,7 @@
 |
 */
 
-/*Route::get('posts', "PostController@index");
-Route::get('post/html', "PostController@html");*/
+// Route::get('posts', "PostController@index");
+// Route::get('post/html', "PostController@html");
+
+/* <> */

@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/8/19
- * Time: 17:41
- */
+
 namespace App\Http\Repositories;
 
 use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Storage;
-
 
 /**
  * Class TagRepository

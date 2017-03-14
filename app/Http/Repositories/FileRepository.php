@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/9/17
- * Time: 19:43
- */
 
 namespace App\Http\Repositories;
-
 
 use App\File;
 use Illuminate\Http\UploadedFile;

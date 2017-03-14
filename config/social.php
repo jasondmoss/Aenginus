@@ -1,12 +1,7 @@
 <?php
 
 return [
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/8/21
- * Time: 22:47
- */
+
     'facebook' => [
         'url'  => 'https://www.facebook.com/lufficc',
         'fa'   => 'fa fa-facebook fa-fw',

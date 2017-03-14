@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/9/20
- * Time: 18:02
- */
 
 namespace Aenginus\ExceptionHandler;
 

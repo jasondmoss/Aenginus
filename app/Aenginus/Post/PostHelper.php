@@ -3,12 +3,6 @@ namespace Aenginus\Post;
 
 use App\Post;
 
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 1/23/2017
- * Time: 12:58 PM
- */
 trait PostHelper
 {
     /**

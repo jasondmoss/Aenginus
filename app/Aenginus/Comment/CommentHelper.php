@@ -3,12 +3,6 @@ namespace Aenginus\Comment;
 
 use XblogConfig;
 
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/10/17
- * Time: 21:33
- */
 trait CommentHelper
 {
     /**

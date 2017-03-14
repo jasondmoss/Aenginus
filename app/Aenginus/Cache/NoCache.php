@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/10/8
- * Time: 18:09
- */
 
 namespace App\Aenginus\Cache;
 

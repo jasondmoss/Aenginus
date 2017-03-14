@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/8/19
- * Time: 14:41
- */
+
 namespace App\Http\ViewComposers;
 
 use App\Http\Repositories\CategoryRepository;

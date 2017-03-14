@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2017/2/28
- * Time: 17:41
- */
+
 namespace App\Http\Repositories;
 
 use App\Ip;
 use Illuminate\Http\Request;
-
 
 class IpRepository extends Repository
 {

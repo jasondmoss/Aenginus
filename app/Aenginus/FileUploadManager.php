@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/9/17
- * Time: 17:10
- */
 
 namespace Aenginus;
 

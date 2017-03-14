@@ -1,12 +1,6 @@
 <?php
 namespace Aenginus\Cache;
 
-/**
- * Created by PhpStorm.
- * User: lufficc
- * Date: 2016/10/6
- * Time: 16:58
- */
 use App\Contracts\XblogCache;
 use Closure;
 
