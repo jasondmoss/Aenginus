@@ -1,4 +1,6 @@
-var elixir = require('laravel-elixir');
+const elixir = require("laravel-elixir");
+
+require("laravel-elixir-vue");
 
 /*
  |--------------------------------------------------------------------------
@@ -10,7 +12,22 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
+var js = [
+    "resources/assets/js/jquery.js",
+    "resources/assets/js/bootstrap.js",
+    "resources/assets/js/hightlight.js",
+    "resources/assets/js/marked.js",
+    "resources/assets/js/autosize.min.js",
+    "resources/assets/js/imgLiquid-min.js",
+    "resources/assets/js/codemirror-4.inline-attachment.js",
+    "resources/assets/js/sweetalert.min.js",
+    "resources/assets/js/app.js",
+];
 
-elixir(function(mix) {
-    mix.sass('app.scss');
+elixir(function (mix) {
+    mix
+        .sass("app.scss")
+        .sass("home.scss", "./public/css/home.css")
+        .scripts(js, "./public/js/app.js")
+        .version(["css/app.css", "css/home.css", "js/app.js"]);
 });

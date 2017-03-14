@@ -16,6 +16,7 @@ return [
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
+    'enable'  => env('CACHE_ENABLE', 'false'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,6 +52,14 @@ return [
 
         'memcached' => [
             'driver' => 'memcached',
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
+            'sasl'       => [
+                env('MEMCACHED_USERNAME'),
+                env('MEMCACHED_PASSWORD'),
+            ],
+            'options'    => [
+                // Memcached::OPT_CONNECT_TIMEOUT  => 2000,
+            ],
             'servers' => [
                 [
                     'host' => env('MEMCACHED_HOST', '127.0.0.1'),
@@ -78,6 +87,5 @@ return [
     |
     */
 
-    'prefix' => 'laravel',
-
+    'prefix' => 'blog',
 ];
