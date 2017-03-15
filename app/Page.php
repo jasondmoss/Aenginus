@@ -16,28 +16,65 @@ use Illuminate\Database\Eloquent\Model;
 use Aenginus\Comment\CommentHelper;
 use Aenginus\Config\ConfigureHelper;
 
+/**
+ * Page.
+ *
+ * @uses \App\Comment
+ * @uses \App\Configuration
+ */
 class Page extends Model
 {
-    protected $fillable = ['name', 'display_name', 'content', 'html_content'];
 
     use CommentHelper, ConfigureHelper;
 
+
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [ 'name', 'display_name', 'content', 'html_content' ];
+
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function configuration()
     {
         return $this->morphOne(Configuration::class, 'configurable');
     }
 
+
     /**
+     * ...
+     *
      * @return array
+     * @access public
      */
     public function getConfigKeys()
     {
-        return ['allow_resource_comment', 'comment_type', 'comment_info', 'display', 'sort_order'];
+        return [
+            'allowResourceComment',
+            'commentType',
+            'comment_info',
+            'display',
+            'sort_order'
+        ];
     }
 }
 

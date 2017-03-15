@@ -14,9 +14,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * File.
+ *
+ */
 class File extends Model
 {
-    protected $fillable = ['name', 'key', 'size', 'type'];
+
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [ 'name', 'key', 'size', 'type' ];
 }
 
 /* <> */

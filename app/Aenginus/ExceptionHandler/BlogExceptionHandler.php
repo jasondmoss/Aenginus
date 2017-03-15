@@ -16,11 +16,19 @@ use Exception;
 use Illuminate\Http\Request;
 use Aenginus\Exception\CommentNotAllowedException;
 
+/**
+ * CommentHelper.
+ *
+ * @trait
+ */
 class BlogExceptionHandler
 {
     /**
-     * @param $request
-     * @param Exception $exception
+     * ...
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $exception
+     *
      * @return mixed
      */
     public function handler(Request $request, Exception $exception)
@@ -30,10 +38,13 @@ class BlogExceptionHandler
             if ($exception instanceof CommentNotAllowedException) {
                 $msg = 'Sorry, comment is not allowed now.';
             }
-            return response()->json(
-                ['status' => $exception->getCode(), 'msg' => $msg]
-            );
+
+            return response()->json([
+                'status' => $exception->getCode(),
+                'msg'    => $msg
+            ]);
         }
+
         return false;
     }
 }

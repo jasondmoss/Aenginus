@@ -17,13 +17,25 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Category.
  *
- * @uses \Illuminate\Database\Eloquent\Model
+ * @uses \App\Post
  */
 class Category extends Model
 {
+
+    /**
+     * ...
+     *
+     * @var array
+     */
     protected $fillable = ['name'];
 
-    //
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function posts()
     {
         return $this->hasMany(Post::class);

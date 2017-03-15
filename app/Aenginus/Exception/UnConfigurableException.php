@@ -14,6 +14,10 @@ namespace Aenginus\Exception;
 
 use Exception;
 
+/**
+ * UnConfigurableException.
+ *
+ */
 class UnConfigurableException extends Exception
 {
     /**/

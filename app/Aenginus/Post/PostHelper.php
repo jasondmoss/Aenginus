@@ -14,12 +14,20 @@ namespace Aenginus\Post;
 
 use App\Post;
 
+/**
+ * PostHelper.
+ *
+ * @trait
+ */
 trait PostHelper
 {
+
     /**
      * onPostShowing, clear this post's unread notifications.
      *
-     * @param Post $post
+     * @param \App\Post $post
+     *
+     * @access public
      */
     public function onPostShowing(Post $post)
     {
@@ -27,6 +35,7 @@ trait PostHelper
         if (!isAdmin($user)) {
             $post->increment('view_count');
         }
+
         if (auth()->check()) {
             $unreadNotifications = $user->unreadNotifications;
             foreach ($unreadNotifications as $notifications) {

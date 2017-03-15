@@ -1,10 +1,10 @@
 <?php
-$final_comment_type = $commentable->getCommentType();
+$finalCommentType = $commentable->getCommentType();
 ?>
-@if($final_comment_type == 'raw')
+@if($finalCommentType == 'raw')
     @include('widget.raw_comment')
-@elseif($final_comment_type == 'duoshuo')
+@elseif($finalCommentType == 'duoshuo')
     @include('widget.duoshuo_comment')
-@elseif($final_comment_type == 'disqus')
+@elseif($finalCommentType == 'disqus')
     @include('widget.disqus_comment')
 @endif

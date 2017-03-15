@@ -12,45 +12,97 @@
 
 namespace App\Aenginus\Cache;
 
-
 use App\Contracts\AenginusCache;
 use Closure;
 
+/**
+ * Mention.
+ *
+ */
 class NoCache implements AenginusCache
 {
+
+    /**
+     * ...
+     *
+     * @param string $tag
+     *
+     * @access public
+     */
     public function setTag($tag)
     {
-        // Do Nothing
+        /**/
     }
 
-    public function setTime($time_in_minute)
+
+    /**
+     * ...
+     *
+     * @param integer $timeInMinute
+     *
+     * @return string
+     * @access public
+     */
+    public function setTime($timeInMinute)
     {
-        // Do Nothing
+        /**/
     }
 
+
+    /**
+     * ...
+     *
+     * @param string   $key
+     * @param \Closure $content
+     * @param string   $tag
+     *
+     * @return \Closure
+     * @access public
+     */
     public function remember($key, Closure $entity, $tag = null)
     {
         /**
-         * directly return
+         * Directly return.
          */
         return $entity();
     }
 
+
+    /**
+     * ...
+     *
+     * @param string $key
+     * @param string $tag
+     *
+     * @access public
+     */
     public function forget($key, $tag = null)
     {
-        // Do Nothing
+        /**/
     }
 
 
+    /**
+     * ...
+     *
+     * @param string $tag
+     *
+     * @access public
+     */
     public function clearCache($tag = null)
     {
-        // Do Nothing
+        /**/
     }
 
 
+    /**
+     * ...
+     *
+     * @access public
+     */
     public function clearAllCache()
     {
-        // Do Nothing
+        /**/
     }
 }
 

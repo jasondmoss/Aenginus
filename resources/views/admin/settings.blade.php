@@ -53,32 +53,32 @@
                         <div class="radio">
                             <label class="col-sm-offset-2">
                                 <input type="radio"
-                                       {{ (isset($comment_type) && $comment_type == 'none') ? ' checked ':'' }}
-                                       name="comment_type"
+                                       {{ (isset($commentType) && $commentType == 'none') ? ' checked ':'' }}
+                                       name="commentType"
                                        value="none">关闭评(不显示)
                             </label>
                         </div>
                         <div class="radio">
                             <label class="col-sm-offset-2">
                                 <input type="radio"
-                                       {{ (!isset($comment_type) || $comment_type == 'raw') ? ' checked ':'' }}
-                                       name="comment_type"
+                                       {{ (!isset($commentType) || $commentType == 'raw') ? ' checked ':'' }}
+                                       name="commentType"
                                        value="raw">自带评论
                             </label>
                         </div>
                         <div class="radio">
                             <label class="col-sm-offset-2">
                                 <input type="radio"
-                                       {{ isset($comment_type) && $comment_type == 'disqus' ? ' checked':'' }}
-                                       name="comment_type"
+                                       {{ isset($commentType) && $commentType == 'disqus' ? ' checked':'' }}
+                                       name="commentType"
                                        value="disqus">Disqus
                             </label>
                         </div>
                         <div class="radio">
                             <label class="col-sm-offset-2">
                                 <input type="radio"
-                                       {{ isset($comment_type) && $comment_type == 'duoshuo' ? ' checked':'' }}
-                                       name="comment_type"
+                                       {{ isset($commentType) && $commentType == 'duoshuo' ? ' checked':'' }}
+                                       name="commentType"
                                        value="duoshuo">多说
                             </label>
                         </div>

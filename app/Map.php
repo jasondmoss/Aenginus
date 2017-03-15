@@ -14,10 +14,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Map.
+ *
+ */
 class Map extends Model
 {
+
+    /**
+     * ...
+     *
+     * @var boolean
+     */
     public $timestamps = false;
-    protected $fillable = ['key','value'];
+
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [ 'key', 'value' ];
 }
 
 /* <> */

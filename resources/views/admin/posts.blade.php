@@ -104,7 +104,7 @@
                                                            data-method="post"
                                                            data-enable-ajax="1"
                                                            data-dialog-title="禁止评论"
-                                                           data-request-data="allow_resource_comment=false"
+                                                           data-request-data="allowResourceComment=false"
                                                            class="swal-dialog-target">
                                                             禁止评论
                                                         </a>
@@ -113,7 +113,7 @@
                                                            data-method="post"
                                                            data-enable-ajax="1"
                                                            data-dialog-title="允许评论"
-                                                           data-request-data="allow_resource_comment=true"
+                                                           data-request-data="allowResourceComment=true"
                                                            class="swal-dialog-target">
                                                             允许评论
                                                         </a>

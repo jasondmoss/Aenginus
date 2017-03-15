@@ -94,23 +94,23 @@
     </select>
 </div>
 <div class="form-group">
-    <label for="comment_type" class="control-label">评论类型</label>
-    <select id="comment_type" name="comment_type" class="form-control">
-        <?php $comment_type = isset($post) ? $post->getConfig('comment_type', 'default') : 'default'?>
-        <option value="default" {{ $comment_type=='default'?' selected' : '' }}>默认</option>
-        <option value="raw" {{ $comment_type=='raw'?' selected' : '' }}>自带评论</option>
-        <option value="disqus" {{ $comment_type=='disqus'?' selected' : '' }}>Disqus</option>
-        <option value="duoshuo" {{ $comment_type=='duoshuo'?' selected' : '' }}>多说</option>
+    <label for="commentType" class="control-label">评论类型</label>
+    <select id="commentType" name="commentType" class="form-control">
+        <?php $commentType = isset($post) ? $post->getConfig('commentType', 'default') : 'default'?>
+        <option value="default" {{ $commentType=='default'?' selected' : '' }}>默认</option>
+        <option value="raw" {{ $commentType=='raw'?' selected' : '' }}>自带评论</option>
+        <option value="disqus" {{ $commentType=='disqus'?' selected' : '' }}>Disqus</option>
+        <option value="duoshuo" {{ $commentType=='duoshuo'?' selected' : '' }}>多说</option>
     </select>
 </div>
 
 <div class="form-group">
-    <label for="allow_resource_comment" class="control-label">是否允许评论</label>
-    <select id="allow_resource_comment" name="allow_resource_comment" class="form-control">
-        <?php $allow_resource_comment = isset($post) ? $post->getConfig('allow_resource_comment', 'default') : 'default'?>
-        <option value="default" {{ $allow_resource_comment=='default'?' selected' : '' }}>默认</option>
-        <option value="false" {{ $allow_resource_comment=='false'?' selected' : '' }}>禁止评论</option>
-        <option value="true" {{ $allow_resource_comment=='true'?' selected' : '' }}>允许评论</option>
+    <label for="allowResourceComment" class="control-label">是否允许评论</label>
+    <select id="allowResourceComment" name="allowResourceComment" class="form-control">
+        <?php $allowResourceComment = isset($post) ? $post->getConfig('allowResourceComment', 'default') : 'default'?>
+        <option value="default" {{ $allowResourceComment=='default'?' selected' : '' }}>默认</option>
+        <option value="false" {{ $allowResourceComment=='false'?' selected' : '' }}>禁止评论</option>
+        <option value="true" {{ $allowResourceComment=='true'?' selected' : '' }}>允许评论</option>
     </select>
 </div>
 

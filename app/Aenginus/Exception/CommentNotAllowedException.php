@@ -14,6 +14,10 @@ namespace Aenginus\Exception;
 
 use Exception;
 
+/**
+ * CommentNotAllowedException.
+ *
+ */
 class CommentNotAllowedException extends Exception
 {
     /**/

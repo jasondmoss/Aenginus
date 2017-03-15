@@ -14,8 +14,20 @@ namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * AenginusConfig.
+ *
+ */
 class AenginusConfig extends Facade
 {
+
+    /**
+     * ...
+     *
+     * @return string
+     * @access public
+     * @static
+     */
     public static function getFacadeAccessor()
     {
         return 'AenginusConfig';

@@ -17,18 +17,37 @@ use App\Post;
 use Illuminate\Http\Request;
 
 /**
- * Class CategoryRepository
+ * CategoryRepository.
+ *
  * @package App\Http\Repository
  */
 class CategoryRepository extends Repository
 {
-    static $tag = 'category';
+
+    /**
+     * ...
+     *
+     * @var string
+     * @static
+     */
+    protected static $tag = 'category';
+
+
+    /**
+     * ...
+     *
+     * @return \App\Category
+     * @access public
+     */
     public function model()
     {
         return app(Category::class);
     }
 
+
     /**
+     * ...
+     *
      * @return mixed
      */
     public function getAll()
@@ -36,54 +55,97 @@ class CategoryRepository extends Repository
         $categories = $this->remember('category.all', function () {
             return Category::withCount('posts')->get();
         });
+
         return $categories;
     }
 
+
     /**
-     * @param $name
+     * ...
+     *
+     * @param string $name
+     *
      * @return mixed
      */
     public function get($name)
     {
-        $category = $this->remember('category.one.' . $name, function () use ($name) {
+        $category = $this->remember("category.one.{$name}", function () use ($name) {
             return Category::where('name', $name)->first();
         });
-        if (!$category)
+
+        if (!$category) {
             abort(404);
+        }
+
         return $category;
     }
 
+
+    /**
+     * ...
+     *
+     * @param \App\Category $category
+     * @param integer       $page
+     *
+     * @return mixed
+     */
     public function pagedPostsByCategory(Category $category, $page = 7)
     {
-        $posts = $this->remember('category.posts.' . $category->name . $page . request()->get('page', 1), function () use ($category, $page) {
-            return $category->posts()->select(Post::selectArrayWithOutContent)->with(['tags', 'category'])->withCount('comments')->orderBy('created_at', 'desc')->paginate($page);
-        });
+        $posts = $this->remember(
+            "category.posts.{$category->name}{$page}". request()->get('page', 1),
+            function () use ($category, $page) {
+                return $category
+                    ->posts()
+                    ->select(Post::selectArrayWithOutContent)
+                    ->with([ 'tags', 'category' ])
+                    ->withCount('comments')
+                    ->orderBy('created_at', 'desc')
+                    ->paginate($page);
+            }
+        );
+
         return $posts;
     }
 
+
     /**
-     * @param Request $request
-     * @return Category
+     * ...
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \App\Category
      */
     public function create(Request $request)
     {
         $this->clearCache();
 
-        $category = Category::create(['name' => $request['name']]);
-        return $category;
+        return Category::create([
+            'name' => $request['name']
+        ]);
     }
 
+
     /**
-     * @param Request $request
-     * @param Category $category
-     * @return bool|int
+     * ...
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Category            $category
+     *
+     * @return boolean|integer
      */
     public function update(Request $request, Category $category)
     {
         $this->clearCache();
+
         return $category->update($request->all());
     }
 
+
+    /**
+     * ...
+     *
+     * @return string
+     */
     public function tag()
     {
         return CategoryRepository::$tag;

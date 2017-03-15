@@ -14,48 +14,76 @@ namespace Aenginus\Comment;
 
 use AenginusConfig;
 
+/**
+ * CommentHelper.
+ *
+ * @trait
+ */
 trait CommentHelper
 {
+
     /**
+     * ...
+     *
      * @return array
+     * @access public
      */
     public function getCommentInfo()
     {
-        $configuration = $this->configuration ? $this->configuration->config : null;
-        if (!$configuration) {
-            $configuration = [];
-            $configuration['comment_info'] = 'default';
-            $configuration['comment_type'] = 'default';
+        $commentConfig = $this->commentConfig ? $this->commentConfig->config : null;
+        if (!$commentConfig) {
+            $commentConfig = [];
+            $commentConfig['comment_info'] = 'default';
+            $commentConfig['commentType'] = 'default';
         }
-        return $configuration;
+
+        return $commentConfig;
     }
 
+
     /**
-     * @return bool
+     * ...
+     *
+     * @return boolean
+     * @access public
      */
     public function isShownComment()
     {
-        $configuration = $this->getCommentInfo();
-        return $configuration['comment_info'] != 'force_disable' && ($configuration['comment_info'] == 'force_enable' || AenginusConfig::getValue('comment_type') != 'none');
+        $commentConfig = $this->getCommentInfo();
+
+        return $commentConfig['comment_info'] != 'force_disable'
+            && ($commentConfig['comment_info'] == 'force_enable' || AenginusConfig::getValue('commentType') != 'none');
     }
 
+
     /**
-     * @return bool
+     * ...
+     *
+     * @return boolean
+     * @access public
      */
     public function allowComment()
     {
-        $allow_resource_comment = $this->getConfig('allow_resource_comment', 'default');
-        return $allow_resource_comment == 'default' ? AenginusConfig::getBoolValue('allow_comment', true) : $this->getBoolConfig('allow_resource_comment', true);
+        $allowResourceComment = $this->getConfig('allowResourceComment', 'default');
+
+        return $allowResourceComment == 'default'
+            ? AenginusConfig::getBoolValue('allow_comment', true)
+            : $this->getBoolConfig('allowResourceComment', true);
     }
 
+
     /**
+     * ...
+     *
      * @return string
+     * @access public
      */
     public function getCommentType()
     {
-        $comment_type = AenginusConfig::getValue('comment_type', 'raw');
-        $commentable_config = $this->getCommentInfo()['comment_type'];
-        return ($commentable_config == 'default' ? $comment_type : $commentable_config);
+        $commentType = AenginusConfig::getValue('commentType', 'raw');
+        $commentable_config = $this->getCommentInfo()['commentType'];
+
+        return ($commentable_config == 'default' ? $commentType : $commentable_config);
     }
 }
 

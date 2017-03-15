@@ -15,13 +15,19 @@ namespace App\Http\ViewComposers;
 use Illuminate\View\View;
 use AenginusConfig;
 
+/**
+ * SettingsComposer.
+ *
+ */
 class SettingsComposer
 {
+
     /**
      * Bind data to the view.
      *
-     * @param  View $view
-     * @return void
+     * @param \Illuminate\View\View $view
+     *
+     * @access public
      */
     public function compose(View $view)
     {

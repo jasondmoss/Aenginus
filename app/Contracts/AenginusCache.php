@@ -14,18 +14,72 @@ namespace App\Contracts;
 
 use Closure;
 
+/**
+ * Kernel.
+ *
+ * @interface
+ */
 interface AenginusCache
 {
+
+    /**
+     * ...
+     *
+     * @param string $tag
+     *
+     * @access public
+     */
     public function setTag($tag);
 
-    public function setTime($time_in_minute);
 
+    /**
+     * ...
+     *
+     * @param integer $timeInMinute
+     *
+     * @access public
+     */
+    public function setTime($timeInMinute);
+
+
+    /**
+     * ...
+     *
+     * @param string   $key
+     * @param \Closure $entity
+     * @param string   $tag
+     *
+     * @access public
+     */
     public function remember($key, Closure $entity, $tag = null);
 
+
+    /**
+     * ...
+     *
+     * @param string $key
+     * @param string $tag
+     *
+     * @access public
+     */
     public function forget($key, $tag = null);
 
+
+    /**
+     * ...
+     *
+     * @param string $tag
+     *
+     * @access public
+     */
     public function clearCache($tag = null);
 
+
+    /**
+     * ...
+     *
+     * @access public
+     */
     public function clearAllCache();
 }
 

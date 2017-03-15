@@ -14,17 +14,55 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Ip.
+ *
+ * @uses \App\Comment
+ * @uses \App\User
+ */
 class Ip extends Model
 {
-    public $timestamps = false;
-    protected $fillable = ['id', 'user_id'];
+
+    /**
+     * ...
+     *
+     * @var boolean
+     */
     public $incrementing = false;
 
+    /**
+     * ...
+     *
+     * @var boolean
+     */
+    public $timestamps = false;
+
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [ 'id', 'user_id' ];
+
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function user()
     {
         return $this->belongsTo(User::class);

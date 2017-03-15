@@ -16,33 +16,51 @@ use App\Facades\AenginusConfig;
 use App\Http\Repositories\PostRepository;
 use Illuminate\View\View;
 
+/**
+ * HotPostsComposer.
+ *
+ */
 class HotPostsComposer
 {
 
+    /**
+     * ...
+     *
+     * @var \App\Http\Repositories\PostRepository
+     */
     protected $postRepository;
+
 
     /**
      * Create a new profile composer.
      *
-     * @internal param UserRepository $users
-     * @param PostRepository $postRepository
+     * @param \App\Http\Repositories\PostRepository $postRepository
+     *
+     * @internal param \App\Http\Repositories\UserRepository $users
+     *
+     * @access public
      */
     public function __construct(PostRepository $postRepository)
     {
         $this->postRepository = $postRepository;
     }
 
+
     /**
      * Bind data to the view.
      *
-     * @param  View $view
-     * @return void
+     * @param \Illuminate\View\View $view
+     *
+     * @access public
      */
     public function compose(View $view)
     {
-        $hotPosts = $this->postRepository->hotPosts(AenginusConfig::getValue('hot_posts_count', 5))->sortBy(function ($post, $key) {
-            return -($post->view_count + $post->comments_count);
-        });
+        $hotPosts = $this->postRepository
+            ->hotPosts(AenginusConfig::getValue('hot_posts_count', 5))
+            ->sortBy(function ($post, $key) {
+                return -($post->view_count + $post->comments_count);
+            });
+
         $view->with('hotPosts', $hotPosts);
     }
 }

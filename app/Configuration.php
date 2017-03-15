@@ -14,22 +14,64 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Configuration.
+ *
+ */
 class Configuration extends Model
 {
-    protected $fillable = ['config'];
+
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [ 'config' ];
+
+    /**
+     * ...
+     *
+     * @var boolean
+     */
     public $timestamps = false;
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function configurable()
     {
         return $this->morphTo();
     }
 
+
+    /**
+     * ...
+     *
+     * @param array
+     *
+     * @return array
+     * @access public
+     */
     public function getConfigAttribute($meta)
     {
-        $a = json_decode($meta, true);
-        return $a ? $a : array();
+        $attr = json_decode($meta, true);
+
+        return $attr ? $attr : [];
     }
 
+
+    /**
+     * ...
+     *
+     * @param array
+     *
+     * @return array
+     * @access public
+     */
     public function setConfigAttribute($meta)
     {
         $this->attributes['config'] = json_encode($meta);

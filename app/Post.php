@@ -19,29 +19,27 @@ use Laravel\Scout\Searchable;
 use Aenginus\Comment\CommentHelper;
 use Aenginus\Config\ConfigureHelper;
 
+/**
+ * Post.
+ *
+ * @uses \App\Category
+ * @uses \App\Comment
+ * @uses \App\Configuration
+ * @uses \App\Tag
+ * @uses \App\User
+ */
 class Post extends Model
 {
+
     use SoftDeletes, CommentHelper, ConfigureHelper;
 
-    /**
-     * The "booting" method of the model.
-     *
-     * @return void
-     */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::addGlobalScope(new PublishedScope());
-    }
 
     /**
-     * The attributes that should be mutated to dates.
+     * ...
      *
      * @var array
+     * @constant
      */
-    protected $dates = ['deleted_at', 'published_at'];
-
     const selectArrayWithOutContent = [
         'id',
         'user_id',
@@ -55,44 +53,129 @@ class Post extends Model
         'status'
     ];
 
-    protected $fillable = ['title', 'description', 'slug', 'category_id', 'user_id', 'content', 'published_at', 'status', 'html_content'];
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [ 'deleted_at', 'published_at' ];
 
+    /**
+     * ...
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'description',
+        'slug',
+        'category_id',
+        'user_id',
+        'content',
+        'published_at',
+        'status',
+        'html_content'
+    ];
+
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new PublishedScope());
+    }
+
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
 
+
+    /**
+     * ...
+     *
+     * @return
+     * @access public
+     */
     public function configuration()
     {
         return $this->morphOne(Configuration::class, 'configurable');
     }
 
+
+    /**
+     * ...
+     *
+     * @return boolean
+     * @access public
+     */
     public function isPublished()
     {
         return $this->status == 1;
     }
 
+
     /**
+     * ...
+     *
      * @return array
+     * @access public
      */
     public function getConfigKeys()
     {
-        return ['allow_resource_comment', 'comment_type', 'comment_info'];
+        return [
+            'allowResourceComment',
+            'commentType',
+            'comment_info'
+        ];
     }
 }
 
